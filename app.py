@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load your trained model
-model = joblib.load("model.pkl")
+model = joblib.load("model.pkl.gz")
 
 @app.route("/")
 def home():
