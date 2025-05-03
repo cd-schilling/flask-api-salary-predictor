@@ -3,8 +3,9 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
+def home():
     return "Hello from Flask on Azure!"
 
-if __name__ == "__main__":
-    app.run()
+@app.route("/predict", methods=["POST"])
+def predict():
+    return {"message": "API is working!"}
